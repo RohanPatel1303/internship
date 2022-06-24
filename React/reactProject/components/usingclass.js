@@ -11,6 +11,7 @@ class UsingClass extends Component{
         Press On The Component To Load A ToastAndroid</Text>
         <Text>The Code Used Is:
             
+
         </Text>
 
     </View>
