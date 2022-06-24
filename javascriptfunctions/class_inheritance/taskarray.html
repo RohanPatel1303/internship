@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="display()">userarray alternate</button>
+    <p id="output"></p>
+</body>
+<script>
+    display=()=>{
+        console.log("hello")
+        let AlphabetArray=['a','b','c','d','e'];
+        let NumericArray=[1,2,3,5,6,7];
+        let AlphabetArray_Length=AlphabetArray.length;
+        let NumericArray_Length=NumericArray.length;
+        let TotalLength=AlphabetArray_Length+NumericArray_Length;//This Will Be Length Of The Output String
+        const Output_Array=[];
+        var temp;
+        var temporary;
+        for(let i=0;i<=TotalLength;i++)
+        {   
+            if(AlphabetArray_Length!=0)
+            {
+
+                temp=AlphabetArray.shift();
+                Output_Array.push(temp);
+                AlphabetArray_Length--;
+
+            }
+            if(NumericArray_Length!=0)
+            {
+                temporary=NumericArray.shift();
+                Output_Array.push(temporary);
+                NumericArray_Length--;
+
+            }
+
+        }
+        document.getElementById("output").innerHTML=Output_Array;
+
+        
+    }
+</script>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- <input type="text" value="rohan" name="" id="hell"> -->
+        <b>Demonstration of the call method to return a object:</b>
+        <div id="hell"></div>
+    </div>
+    <hr>
+    <div>
+        <b>Demonstration of the apply method . <br>It is similar to the call method but also can work with the array as a parameter</b>
+        <div id="appl">
+
+        </div>
+    </div>
+    <hr>
+    <div>
+        <b>Demonstration of the Bind method<br>It is used to preserve the this keyword The This keyword is lost after some time to preserve this the this keyword is used!!</b>
+        <ol>
+            <li> Here The This Keyword Is Not Preserved
+                <button onclick="threesecdelay()">click to load the function display after 3 seconds</button>
+                <button onclick="nodelay()">click to load the function with no delay</button>
+                <button onclick="bind_and_delay()">click to load the same function with a 10s delay and also preserve the this callback.</button>
+                <div id="bid">
+                    text doesnt change!!
+                </div>
+            </li>
+            
+        </ol>
+        
+
+    </div>
+    
+    
+</body>
+<script>
+    const person={
+        fullname:function(){
+            return "<em>"+this.name + this.email+"</em>";
+
+        },
+        display:function(){
+            return " the text that you are observing right now is the one placed in the display function inside the person object  !!"
+
+        },
+        display_with_bind:function(){
+            document.getElementById('bid').innerHTML="the text changed after the 10secs"+this.name;
+        }
+    }
+    const person1={
+        name:"rohan",
+        email:"098233rohan@gmail.com"
+    }
+  
+    document.getElementById("hell").innerHTML=person.fullname.call(person1);
+   
+    const persona={
+        fullnamea:function(country,state){
+            return "The Email Is:"+"<em>"+this.email+"</em>"+" Their Country :" +"<em>"+country+"</em>"+"Their State :"+ "<em>"+ state+"</em>";
+
+        }
+    }
+    const persona1={
+        name:"rohan",
+        email:"rohan.patel@alainsoftware.com"
+    }
+    document.getElementById('appl').innerHTML=persona.fullnamea.apply(persona1,['india','Gujarat']);
+
+    threesecdelay=()=>{
+        setTimeout(() => {
+            
+            document.getElementById('bind').innerHTML=person.display.call(person1);
+            console.log("hello the time out");
+            
+        },1000 );
+
+    }
+    function nodelay(){
+        console.log("execution start");
+        document.getElementById('bid').innerHTML="see the changed text"+person.display.call(person1);
+        // document.getElementById('bid').innerHTML="hello changed text";
+        console.log("execeution end");
+
+    }
+    function bind_and_delay(){
+        console.log("execution start");
+        let display_with_bind=person.display_with_bind.bind(person);
+        setTimeout(display_with_bind,3000);
+        console.log("execeution end");
+
+    }
+   
+</script>
+</html>

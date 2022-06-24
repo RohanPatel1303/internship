@@ -1,0 +1,44 @@
+<html>
+<head><title>
+    try all the loops here
+</title>
+
+</head>
+<body>
+    <div>
+        <p>
+            try if loops
+        </p>
+        <input type="text" id="score">
+        <button onclick="checkmarks()"> CLICK</button>
+        <!-- <p id="marks"></p>    -->
+        <script>
+           
+           
+            
+            // var marks= parseInt(document.getElementById("score").value);
+            function checkmarks(){
+                var mark=document.getElementById("score").value;
+            var marks=parseInt(mark);
+                if(marks>35)
+                {
+                    console.log("You Are Pass");
+
+                }
+                else if(marks==35)
+                {
+                    console.log("You Are Promated!");
+
+                }
+                else{
+                    console.log("You Are failed!");
+
+                }
+            }
+
+        </script>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b>
+        The Implementation Of The Javascript Inheritance!!
+    </b>
+    <input type="text"  id="carbrand">
+    <input type="text" name="" id="carmodel">
+    <!-- <button onclick="disp()">click</button> -->
+    <button onclick="confirmcar()">confirm car</button>
+    <div id="cardisplay"></div>
+
+</body>
+<script>
+    const brand=document.getElementById('carbrand').value;
+    const carmodel=document.getElementById('carmodel').value;
+    function confirmcar(){
+
+
+
+
+        let brand=document.getElementById('carbrand').value;
+     let carmodel=document.getElementById('carmodel').value;
+    let mycar=new Car(brand,carmodel);
+    document.getElementById('cardisplay').innerHTML=mycar.present();
+        // console.log("hello");
+        console.log(brand);
+
+    }
+ 
+
+class Car{
+    // constructor(brand){
+    //     this.carname=brand;
+
+    // }
+    constructor(brand,carmodel,hello){
+        this.carname=brand;
+this.carmodel1=carmodel;
+    }
+    present(){
+        return "I Have A "+this.carname+" "+ this.carmodel1;
+
+    }
+}
+class Model extends Car{
+    constructor(brand,mod){
+        super(brand);
+        this.model=mod;
+
+    }
+    show(){
+        return this.present()+"it is a "+this.model;
+
+    }
+}
+</script>
+</html>

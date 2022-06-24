@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            /* border: 5px solid black; */
+            /* border-radius:10px; */
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <ol>
+                    <li>
+                        The String length Command
+
+                    </li>
+                </ol>
+            </td>
+
+            <td> <input placeholder="Enter The Text Here" type="text" name="op1" id="op1"></td>
+            <td>
+                <button id="strlen" onclick="myfunction()">click to know the string length</button>
+            </td>
+            <td>
+                <input type="text" placeholder="0" id="strlendisp">
+
+            </td>
+
+        </tr>
+        <tr >
+            <td>
+                <ol start="2">
+                    <li>
+                        this is demonstaration of the slice substring and substr
+
+                    </li>
+                </ol>
+            </td>
+            <td>Enter The String</td>
+            <td>
+                <input type="text" name="op2string" id="op2string">
+
+            </td>
+            <td>
+                Enter The Indexes
+            </td>
+            <td>
+                <input type="number" placeholder=" Starting Index " name="start" id="start">
+            </td>
+            <td>
+                <input type="number" placeholder="Ending Index" name="end" id="end">
+
+            </td>
+            <td>
+                <button onclick="slicestr()">slice</button>
+
+            </td>
+            <td>
+                <button onclick="substringstr()">substring</button>
+
+            </td>
+            <td>
+                <button onclick="substrstr()">substr</button>
+
+            </td>
+            <td>
+    <input type="text" name="3op" placeholder="The answer" id="3op">
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ol start="3">
+                    <li>
+                        The Replace Command!
+                    </li>
+                </ol>
+                <td>
+                    <input placeholder="Whole String" type="text" id="repstr">
+                </td>
+                <td>
+                    <input placeholder="what to replace" type="text" name="" id="replacewhat">
+
+                </td>
+                <td>
+                    <input placeholder="Reppace With" type="text" id="replacement">
+                </td>
+                <td>
+                    <button onclick="replace()">Replace</button>
+                </td>
+                <span id="answer"></span>
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    let output;
+    function myfunction() {
+        var str = document.getElementById('op1').value;
+        var strlen = str.length;
+        document.getElementById('strlendisp').setAttribute('value', strlen);
+    }//function to count the number of characters in a string!!
+    function slicestr() {
+
+        var str = document.getElementById('op2string').value;
+        var startindex = parseInt(document.getElementById('start').value);
+        var endindex = parseInt(document.getElementById('end').value);
+        var output = str.slice(startindex, endindex);
+        console.log(output);
+        document.getElementById("3op").setAttribute('value', output);
+
+
+    }//function to slice or break the string from a starting index to ending index (length of the new string =(ending index- starting index))
+
+    function substringstr() {
+
+        var str = document.getElementById('op2string').value;
+        var startindex = parseInt(document.getElementById('start').value);
+        var endindex = parseInt(document.getElementById('end').value);
+
+        var output = str.substring(startindex, endindex);
+        document.getElementById("3op").setAttribute('value', output);
+
+    }//similar to slice but will not accept the indexes as a negative value!
+
+    function substrstr() {
+        var str = document.getElementById('op2string').value;
+        var startindex = parseInt(document.getElementById('start').value);
+        var endindex = parseInt(document.getElementById('end').value);
+        console.log("before Executuioin");
+        var output=str.substr(startindex,endindex);
+        console.log("why");
+        console.log(output);
+        document.getElementById("3op").setAttribute('value', output);
+    }//breaks the string from the starting index and upto the charaters mentioned in the second parameter!
+
+    replace=()=>{
+        var str=document.getElementById("repstr").value;
+        var repl=document.getElementById("replacewhat").value;
+        var replw=document.getElementById("replacement");
+        var text=str.replace(repl,)
+
+    }
+</script>
+
+</html>

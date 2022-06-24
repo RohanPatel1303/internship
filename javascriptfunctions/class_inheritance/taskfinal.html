@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="input">
+    <button onclick="alternatearray()">
+    click this</button>
+    <p id="ans"></p>
+
+</body>
+<script>
+    // let x=parseInt(document.getElementById("input").value);
+    
+    let a='a';
+    let array=[]
+    let b=1;
+    // let i=0;
+    let alphabet;
+
+for(i=9,alphabet='';++i<36;){
+    alphabet += i.toString(36);
+}
+
+let r=0;
+
+    alternatearray=()=>{
+        let x=document.getElementById("input").value;
+     console.log("hello"+x);
+        for(let i=0;i<x;i++)
+    {
+     console.log("hello loop"+i)
+
+        if(i%2==0)
+        {
+            array.push(b);
+            b=b+1;
+            console.log(array);
+        }
+        else{
+            array.push(alphabet[r]);
+            r=r+1;
+            console.log(array);
+
+            
+        }
+    }
+    document.getElementById("ans").innerHTML="the array "+array;
+
+    }
+    
+</script>
+</html>

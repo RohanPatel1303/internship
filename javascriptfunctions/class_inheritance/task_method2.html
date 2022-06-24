@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <b>The a array:</b>
+    <p id="test1"></p>
+    <b>The b array:</b>
+    <p id="test2"></p>
+    <button onclick="myfunction()">Click This To Start Operation</button>
+</body>
+<script>
+
+    const a=[1,2,3];
+    const b=["a","b","c"];
+    document.getElementById("test1").innerHTML=a;
+document.getElementById("test2").innerHTML=b;
+// document.getElementById("test3").innerHTML=c;
+    let x ;
+    let y;
+    x=a.shift();
+    b.splice(1,0,x);
+    y=a.shift(2);
+    b.splice(3,0,y);
+    z=a.shift(3);
+    b.splice(5,0,z);
+  
+myfunction=()=>{
+    document.getElementById("test1").innerHTML=a;
+document.getElementById("test2").innerHTML=b;
+// document.getElementById("test3").innerHTML=c;
+
+}
+
+
+
+
+
+
+
+</script>
+</html>

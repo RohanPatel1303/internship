@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="number" id="input"> -->
+    <!-- <input type="text" placeholder="a" id="userinputa"> -->
+    <!-- <input type="text" placeholder="b" id="userinputb"> -->
+    <button onclick="display()">userarray alternate</button>
+
+    <!-- <button onclick="alternatearray()">click this</button> -->
+    <p id="ans"></p>
+    <p id="hello"></p>
+
+</body>
+<script>
+    // let x=parseInt(document.getElementById("input").value);
+    
+    let a='a';
+    let array=[]
+    let b=1;
+    // let i=0;
+    let alphabet;
+
+for(i=9,alphabet='';++i<36;){
+    alphabet += i.toString(36);
+}
+
+let r=0;
+
+    // alternatearray=()=>{
+    //     let x=document.getElementById("input").value;
+    //  console.log("hello"+x);
+    //     for(let i=0;i<x;i++)
+    // {
+    //  console.log("hello loop"+i)
+
+    //     if(i%2==0)
+    //     {
+    //         array.push(b);
+    //         b=b+1;
+    //         console.log(array);
+    //     }
+    //     else{
+    //         array.push(alphabet[r]);
+    //         r=r+1;
+    //         console.log(array);
+
+            
+    //     }
+    // }
+    // document.getElementById("ans").innerHTML="the array "+array;
+
+    // }
+    display=()=>{
+        const arr1=['a','b','c'];
+        let arr2=[1,2,3];
+        // let arr2=document.getElementById("userinputb").value;
+        let length=arr1.length;
+        let length2=arr2.length;
+        let totallength=length+length2;
+        let ua=[];
+        for(let i=0;i<=totallength;i++)
+        {
+            if(length!=0&&length2!=0){
+                ua[i]=arr1[i];
+                ua[i+1]=arr2[i];
+                console.log(ua);
+                i++;
+                
+                
+            }
+            // ua[i]=arr1[i];
+            // if(length!=0){
+            //     // if(i%2==0)
+            //     {
+            //         ua.push(arr1[i]);
+                    
+            //     }
+            //     length=length-1;
+            // }
+            // {
+            //     ua.push(arr2[i]);
+            // }
+
+        }
+        document.getElementById("hello").innerHTML=ua;
+
+        
+    }
+</script>
+</html>

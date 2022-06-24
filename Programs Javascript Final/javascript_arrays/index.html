@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src=""></script> -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Arrays Using Javascript</title>
+
+</head>
+
+<body>
+    <div class="container-fluid border border-black">
+        Javascript Arrays
+
+        <div class="row">
+            <div class="border border-black col">
+                1. to string()
+                <p id="arr"></p>
+                <p id="tostring"></p>
+                <button onclick="tostring()">To string</button>
+            </div>
+
+            <div class="border border-black col">
+                2.join()<br>Similar to the toString() but we can specify the seperator between the elements.
+                <p id="joinarr"></p>
+                <p id="join"></p>
+                <button onclick="join()">Join()</button>
+            </div>
+            <div class="border border-black col">
+                3.pop()<br>It is used to remove the last element from the array!!
+                <p id="poparr"></p>
+                <p id="pop"></p>
+                <button onclick="pop()">Pop()</button>
+            </div>
+            <div class="border border-black col">
+                4.push()<br>It Will Addd a Element to the array just after the last index!!
+                <p id="pusharr"></p>
+                <p id="push"></p>
+                <button onclick="push()">Push()</button>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="border border-black col">
+                5.shift()<br>Similar To The Pop but works on first element rather than last element!!
+                <p id="shiftarr"></p>
+                <p id="shift"></p>
+                <button onclick="shift()">shift()</button>
+            </div>
+            <div class="border border-black col">
+                6.unshift()<br>It Will Addd a Element to the array just after the last index!!
+                <p id="unshiftarr"></p>
+                <p id="unshift"></p>
+                <button onclick="unshift()">Unshift()</button>
+            </div>
+            <div class="border border-black col">
+                7.concat()<br>It Will Create a new array by merging two arrays!!
+                <p id="arr1">Array 1 Is :</p>
+                <p id="arr2">Array 2 Is :</p>
+                <button onclick="merge()"> Merge Both Arrays!!</button>
+                <p id="merged">The Merged Array Is :</p>
+            </div>
+            <div class="border border-black col">
+                8.splice()<br>It Will Take Few Parameters
+                <ol start="A">
+                    <li>
+                        two parameters splice(1,2) it will delete 2 elements starting at index 1!
+                    </li>
+                    <li>
+                        It takes more than two parameters splice(2,2,"hello",...)first parameter defines from which
+                        index the elements should be added second parameter defines how many elements to be removed and
+                        the third and onwards are for adding elements!
+                    </li>
+                </ol>
+                <p id="arrsp"></p>
+                <button onclick="splicestr()">Splice</button>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="border border-black col">
+                9.Slice()<br>It will split the array into parts it is used to create a new array.
+                <p id="slicearr"></p>
+                <span id="spansliced"></span>
+                <!-- <p class="slicedarr"></p> -->
+                <button onclick="slicestr()">Slice()</button>
+
+            </div>
+            <div class="border border-black col">
+                10.Reverse()<br>To reverse The Array!!
+                <p id="reversearr"></p>
+                <button onclick="reversearr()">Reverse()</button>
+            </div>
+            <div class="border border-black col">
+                11.Sort Array
+                <p id="sortarr"></p>
+                <button onclick="sortarr()">Sort()</button>
+
+            </div>
+
+            <div class="border border-black col">
+                12.Sort Numeric Array
+                <p id="sortarr2"></p>
+                <button onclick="sortnum()">Sort()</button>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const array = ["a", "b", "c","e","d","z"];
+    document.getElementById("arr").innerHTML = array;
+    function tostring() {
+        var text = array.toString();
+        document.getElementById('tostring').innerHTML = "here the array is converted to string " + text;
+    }
+    document.getElementById('joinarr').innerHTML = array;
+    function join() {
+        var text = array.join('$');
+        document.getElementById('join').innerHTML = "here the array is converted to string " + text;
+
+
+    }
+    document.getElementById('poparr').innerHTML = array;
+    pop = () => {
+        var text = array.pop();
+        document.getElementById('pop').innerHTML = "The pop Element Is  " + text + "The Array Is <b>" + array + "<b>";
+
+
+    }
+    document.getElementById('pusharr').innerHTML = array;
+    push = () => {
+
+        document.getElementById('push').innerHTML = "hello will be pushed in the array after few seconds";
+        array.push("hello");
+        display = () => {
+            document.getElementById('pusharr').innerHTML = "The Updated Array Is: " + array;
+
+
+
+
+
+
+            
+
+        }
+        setTimeout(display, 1000);
+
+    }
+    document.getElementById('shiftarr').innerHTML = array;
+    shift = () => {
+        var text = array.shift();
+        document.getElementById('shift').innerHTML = "The Shifted  Element Is  " + text + "The Array Is <b>" + array + "<b>";
+        document.getElementById('shiftarr').innerHTML = array;
+
+
+    }
+    document.getElementById('unshiftarr').innerHTML = array;
+
+    unshift = () => {
+        document.getElementById("unshift").innerHTML = "The element unshift is added at first position";
+        array.unshift("unshift");
+        document.getElementById('unshiftarr').innerHTML = array;
+
+    }
+
+    const arr1 = ["1.1", "1.2", "1.4", "1.5"];
+    const arr2 = ["2.1", "2.2"];
+    merge = () => {
+        const arr3 = arr2.concat(arr1);
+        const node = document.createElement("p");
+        const pro = document.createTextNode(arr3.join(","));
+        console.log(arr3 + "hello123" + "pro" + pro)
+        document.getElementById("merged").append(pro);
+
+        // document.getElementById(merged).append(node);
+    }
+    const arrsp = arr1;
+    document.getElementById("arrsp").innerHTML = arrsp;
+    splicestr = () => {
+        arrsp.splice(1, 1);
+        const spp = document.createTextNode("the new array is " + arrsp.join(","));
+        document.getElementById("arrsp").append(spp);
+
+
+
+
+
+    }
+    document.getElementById("slicearr").innerHTML=arrsp;
+
+    slicestr=()=>{
+        
+       const newarr=arrsp.slice(0,2);
+        document.getElementById("spansliced").innerHTML=newarr;
+        
+    }
+    document.getElementById("reversearr").innerHTML=arrsp;
+
+    reversearr=()=>{
+        arrsp.reverse();
+    document.getElementById("reversearr").innerHTML=arrsp;
+        
+    }
+    document.getElementById("sortarr").innerHTML=array;
+
+    sortarr=()=>{
+        array.sort();
+        // function(a,b) {
+            // return a-b;
+        // }
+        document.getElementById("sortarr").innerHTML=array;
+        
+    }
+    const numarray=[1,2,3,4,5,6,11,10,7,9,8];
+    document.getElementById("sortarr2").innerHTML=numarray;
+
+    sortnum=()=>{
+        numarray.sort(function (a,b){
+            return a-b;
+        });
+    document.getElementById("sortarr2").innerHTML=numarray;
+
+    }
+
+</script>
+
+</html>

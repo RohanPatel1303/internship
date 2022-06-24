@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="type">
+        <button onclick="checktypeconversion()">convert to number</button>
+        <button onclick="tostring()">convert to string</button>
+
+        <span id="answer"></span>
+
+    </div>
+    <div>
+        <b>Dates to number</b>
+        <button onclick="convertdate()">convert</button>
+        <p id="ans">the date: <p id="datecurrent"></p></p>
+
+    </div>
+    <div>
+        <div>
+        <b>Dates to String</b>
+        <button onclick="convertdatetostring()">convert</button>
+        <p id="anss">the date: <p id="datecurrents"></p></p>
+        </div>
+    </div>
+    <div>
+        <b onmouseover="numberbool()" >Boolean to number</b>
+        <span id="bool"></span>
+    </div>
+</body>
+<script>
+    numberbool=()=>{
+        document.getElementById("bool").innerHTML=Number(false)
+    }
+        const dates=new Date();
+document.getElementById("datecurrents").innerHTML=dates;
+    convertdatetostring=()=>{
+        const datestr=String(dates);
+document.getElementById("datecurrents").innerHTML="The Date "+dates;
+        
+
+    }
+    checktypeconversion=()=>{
+        var x=document.getElementById('type').value;
+        document.getElementById("answer").innerHTML=Number(x);
+    }
+    tostring=()=>{
+        var x=document.getElementById('type').value;
+        document.getElementById("answer").innerHTML=String(x);
+
+    }
+    const date=new Date();
+    document.getElementById("datecurrent").innerHTML=date;
+
+    convertdate=()=>{
+        const d=Number(date);
+    document.getElementById("datecurrent").innerHTML=d;
+
+    }
+</script>
+</html>
